@@ -14,6 +14,9 @@ namespace Biblioteca.Controllers
         [HttpPost]
         public IActionResult Cadastro(Livro l)
         {
+            if (l.Autor == ""  ||  l.Ano == 0  || l.Titulo == "" ) {}
+           else
+        {
             LivroService livroService = new LivroService();
 
             if(l.Id == 0)
@@ -24,7 +27,7 @@ namespace Biblioteca.Controllers
             {
                 livroService.Atualizar(l);
             }
-
+        }
             return RedirectToAction("Listagem");
         }
 

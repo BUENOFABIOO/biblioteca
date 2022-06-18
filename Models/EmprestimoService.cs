@@ -35,6 +35,10 @@ namespace Biblioteca.Models
             using(BibliotecaContext bc = new BibliotecaContext())
             {
                 return bc.Emprestimos.Include(e => e.Livro).ToList();
+              // IQueryable<Emprestimo> query;
+              // query.Orderby(1 =  l.Emprestimo).ToList();
+            //   return query.Orderby (1 = > l.Emprestimo).ToList();
+
             }
         }
 
